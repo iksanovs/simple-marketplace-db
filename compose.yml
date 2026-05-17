@@ -3,4 +3,6 @@ services:
     image: 'simple-marketplace-db:latest'
     build:
       context: .
-    restart: always
+    restart: unless-stopped
+    expose:
+      - 3000
