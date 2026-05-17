@@ -1,5 +1,5 @@
 services:
-  wb:
+  marketplace:
     image: 'simple-marketplace-db:latest'
     build:
       context: .

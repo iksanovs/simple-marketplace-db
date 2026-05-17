@@ -1,0 +1,15 @@
+#compose.traefik.yml
+services:
+  marketplace:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${NAME?Variable not set}.rule=Host(`${NAME?Variable not set}.${DOMAIN?Variable not set}`)"
+      - "traefik.http.routers.${NAME?Variable not set}.entrypoints=websecure"
+      - "traefik.http.routers.${NAME?Variable not set}.tls=true"
+      - "traefik.http.routers.${NAME?Variable not set}.tls.certresolver=le"
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true
