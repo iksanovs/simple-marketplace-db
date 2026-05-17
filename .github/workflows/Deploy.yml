@@ -1,0 +1,58 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  workflow_dispatch:
+    inputs:
+      action:
+        description: Action
+        required: true
+        type: choice
+        options:
+          - deploy
+          - stop
+          - restart
+
+jobs:
+  deploy:
+    runs-on:
+      - self-hosted
+      - prod
+    environment: marketplace
+    env:
+      DOMAIN: ${{ vars.DOMAIN }}
+      NAME: ${{ vars.NAME }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Deploy 🤩😎🤤
+        run: |
+          ACTION="${{ github.event.inputs.action }}"
+
+          case "$ACTION" in
+          
+            stop)
+              echo "🛑 Stopping services..."
+
+              docker compose down
+              ;;
+
+            restart)
+              echo "🔄 Restarting services..."
+
+              docker compose restart
+              ;;
+              
+            *)
+              echo "🚀 Starting deployment..."
+
+              docker compose down
+              docker compose build --no-cache
+              docker compose --env-file /dev/null up -d
+
+              echo "✅ Deployment complete!"
+              ;;
+              
+          esac
