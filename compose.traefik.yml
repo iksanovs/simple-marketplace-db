@@ -3,10 +3,10 @@ services:
   marketplace:
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.${NAME?Variable not set}.rule=Host(`${NAME?Variable not set}.${DOMAIN?Variable not set}`)"
-      - "traefik.http.routers.${NAME?Variable not set}.entrypoints=websecure"
-      - "traefik.http.routers.${NAME?Variable not set}.tls=true"
-      - "traefik.http.routers.${NAME?Variable not set}.tls.certresolver=le"
+      - "traefik.http.routers.${NAME:-marketplace}.rule=Host(`${NAME:-marketplace}.${DOMAIN?Variable not set}`)"
+      - "traefik.http.routers.${NAME:-marketplace}.entrypoints=websecure"
+      - "traefik.http.routers.${NAME:-marketplace}.tls=true"
+      - "traefik.http.routers.${NAME:-marketplace}.tls.certresolver=le"
     networks:
       - traefik
 
