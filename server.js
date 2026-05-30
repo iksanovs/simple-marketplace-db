@@ -49,7 +49,7 @@ app.get("/openapi.json", (req, res) => res.json(openapiSpec));
 // API meta
 app.get("/api/meta", (req, res) => {
   res.json({
-    name: "Simple Marketplace API (SQLite) — WB-like MVP",
+    name: "Simple Marketplace API (SQLite)",
     version: "3.0",
     endpoints: [
       "GET    /docs",

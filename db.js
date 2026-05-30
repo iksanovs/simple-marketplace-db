@@ -287,11 +287,11 @@ function seedCoreCatalog(db) {
 
   addProduct(
     {
-      id: "p_wb_hoodie_black",
+      id: "p_prod_hoodie_black",
       title: "Худи oversize базовое",
       description: "Плотный хлопок, мягкий начёс. Унисекс, свободная посадка.",
       price: 3990,
-      brand: "WB Basics",
+      brand: "Basic Essentials",
       category_id: "clothes",
       image: "/img/products/clothes/hoodie_1.png",
       images: [
@@ -306,15 +306,15 @@ function seedCoreCatalog(db) {
       popularity: 980,
     },
     [
-      { id: "v_wb_hoodie_black_s", product_id: "p_wb_hoodie_black", size: "S", color: "Черный", sku: "WB-HOODIE-S-BLK", stock: 14 },
-      { id: "v_wb_hoodie_black_m", product_id: "p_wb_hoodie_black", size: "M", color: "Черный", sku: "WB-HOODIE-M-BLK", stock: 9 },
-      { id: "v_wb_hoodie_white_l", product_id: "p_wb_hoodie_black", size: "L", color: "Белый", sku: "WB-HOODIE-L-WHT", stock: 2 },
+      { id: "v_var_hoodie_black_s", product_id: "p_prod_hoodie_black", size: "S", color: "Черный", sku: "PROD-HOODIE-S-BLK", stock: 14 },
+      { id: "v_var_hoodie_black_m", product_id: "p_prod_hoodie_black", size: "M", color: "Черный", sku: "PROD-HOODIE-M-BLK", stock: 9 },
+      { id: "v_var_hoodie_white_l", product_id: "p_prod_hoodie_black", size: "L", color: "Белый", sku: "PROD-HOODIE-L-WHT", stock: 2 },
     ]
   );
 
   addProduct(
     {
-      id: "p_wb_tws_neo",
+      id: "p_prod_tws_neo",
       title: "Наушники беспроводные TWS Neo",
       description: "Активное шумоподавление, 24 часа работы с кейсом и быстрый заряд.",
       price: 3290,
@@ -329,14 +329,14 @@ function seedCoreCatalog(db) {
       popularity: 1700,
     },
     [
-      { id: "v_wb_tws_black", product_id: "p_wb_tws_neo", size: "Стандарт", color: "Черный", sku: "TWS-NEO-BLK", stock: 22 },
-      { id: "v_wb_tws_white", product_id: "p_wb_tws_neo", size: "Стандарт", color: "Белый", sku: "TWS-NEO-WHT", stock: 12 },
+      { id: "v_var_tws_black", product_id: "p_prod_tws_neo", size: "Стандарт", color: "Черный", sku: "TWS-NEO-BLK", stock: 22 },
+      { id: "v_var_tws_white", product_id: "p_prod_tws_neo", size: "Стандарт", color: "Белый", sku: "TWS-NEO-WHT", stock: 12 },
     ]
   );
 
   addProduct(
     {
-      id: "p_wb_cream_hydra",
+      id: "p_prod_cream_hydra",
       title: "Крем для лица увлажняющий Hydra",
       description: "Лёгкая текстура, гиалуроновая кислота и пантенол. Подходит для ежедневного ухода.",
       price: 990,
@@ -351,14 +351,14 @@ function seedCoreCatalog(db) {
       popularity: 640,
     },
     [
-      { id: "v_wb_cream_50", product_id: "p_wb_cream_hydra", size: "50 мл", color: "Без цвета", sku: "CREAM-HYDRA-50", stock: 31 },
-      { id: "v_wb_cream_100", product_id: "p_wb_cream_hydra", size: "100 мл", color: "Без цвета", sku: "CREAM-HYDRA-100", stock: 12 },
+      { id: "v_var_cream_50", product_id: "p_prod_cream_hydra", size: "50 мл", color: "Без цвета", sku: "CREAM-HYDRA-50", stock: 31 },
+      { id: "v_var_cream_100", product_id: "p_prod_cream_hydra", size: "100 мл", color: "Без цвета", sku: "CREAM-HYDRA-100", stock: 12 },
     ]
   );
 
   addProduct(
     {
-      id: "p_wb_blanket_soft",
+      id: "p_prod_blanket_soft",
       title: "Плед велсофт Premium",
       description: "Тёплый, мягкий и лёгкий плед для дома. Не электризуется, легко стирается.",
       price: 1490,
@@ -373,8 +373,8 @@ function seedCoreCatalog(db) {
       popularity: 900,
     },
     [
-      { id: "v_wb_blanket_pink", product_id: "p_wb_blanket_soft", size: "140x200", color: "Розовый", sku: "BLANKET-PRM-PNK", stock: 10 },
-      { id: "v_wb_blanket_gray", product_id: "p_wb_blanket_soft", size: "200x220", color: "Серый", sku: "BLANKET-PRM-GRY", stock: 5 },
+      { id: "v_var_blanket_pink", product_id: "p_prod_blanket_soft", size: "140x200", color: "Розовый", sku: "BLANKET-PRM-PNK", stock: 10 },
+      { id: "v_var_blanket_gray", product_id: "p_prod_blanket_soft", size: "200x220", color: "Серый", sku: "BLANKET-PRM-GRY", stock: 5 },
     ]
   );
 
@@ -385,9 +385,9 @@ function seedCoreCatalog(db) {
       VALUES (?, ?, ?, ?, ?)
     `);
 
-    insReview.run(rid("r_"), "p_wb_hoodie_black", "Анна", 5, "Очень мягкое и тёплое, ношу каждый день.");
-    insReview.run(rid("r_"), "p_wb_hoodie_black", "Илья", 4, "Хорошее качество ткани, слегка oversized.");
-    insReview.run(rid("r_"), "p_wb_tws_neo", "Марина", 5, "Отличный звук за эту цену, кейс компактный.");
+    insReview.run(rid("r_"), "p_prod_hoodie_black", "Анна", 5, "Очень мягкое и тёплое, ношу каждый день.");
+    insReview.run(rid("r_"), "p_prod_hoodie_black", "Илья", 4, "Хорошее качество ткани, слегка oversized.");
+    insReview.run(rid("r_"), "p_prod_tws_neo", "Марина", 5, "Отличный звук за эту цену, кейс компактный.");
   }
 }
 
@@ -413,11 +413,11 @@ function ensureDemoCatalog(db) {
 
   const products = [
     {
-      id: "p_wb_hoodie_light",
+      id: "p_prod_hoodie_light",
       title: "Худи oversize Light",
       description: "Базовая модель из футера без начёса. Подходит на весну и лето.",
       price: 3190,
-      brand: "WB Basics",
+      brand: "Basic Essentials",
       category_id: "clothes",
       image: "/img/products/clothes/hoodie_2.png",
       images: ["/img/products/clothes/hoodie_2.png", "/img/products/clothes/hoodie_3.png"],
@@ -427,13 +427,13 @@ function ensureDemoCatalog(db) {
       reviews_count: 74,
       popularity: 860,
       variants: [
-        { id: "v_wb_hoodie_light_s", size: "S", color: "Бежевый", sku: "WB-HOODIE-LT-S-BGE", stock: 8 },
-        { id: "v_wb_hoodie_light_m", size: "M", color: "Бежевый", sku: "WB-HOODIE-LT-M-BGE", stock: 12 },
-        { id: "v_wb_hoodie_light_l", size: "L", color: "Графит", sku: "WB-HOODIE-LT-L-GRF", stock: 3 },
+        { id: "v_var_hoodie_light_s", size: "S", color: "Бежевый", sku: "PROD-HOODIE-LT-S-BGE", stock: 8 },
+        { id: "v_var_hoodie_light_m", size: "M", color: "Бежевый", sku: "PROD-HOODIE-LT-M-BGE", stock: 12 },
+        { id: "v_var_hoodie_light_l", size: "L", color: "Графит", sku: "PROD-HOODIE-LT-L-GRF", stock: 3 },
       ],
     },
     {
-      id: "p_wb_hoodie_zip",
+      id: "p_prod_hoodie_zip",
       title: "Толстовка на молнии Street",
       description: "Практичная модель с мягкой подкладкой и плотной молнией.",
       price: 4290,
@@ -447,12 +447,12 @@ function ensureDemoCatalog(db) {
       reviews_count: 41,
       popularity: 1020,
       variants: [
-        { id: "v_wb_zip_m", size: "M", color: "Черный", sku: "WB-ZIP-M-BLK", stock: 7 },
-        { id: "v_wb_zip_l", size: "L", color: "Черный", sku: "WB-ZIP-L-BLK", stock: 1 },
+        { id: "v_var_zip_m", size: "M", color: "Черный", sku: "PROD-ZIP-M-BLK", stock: 7 },
+        { id: "v_var_zip_l", size: "L", color: "Черный", sku: "PROD-ZIP-L-BLK", stock: 1 },
       ],
     },
     {
-      id: "p_wb_cream_night",
+      id: "p_prod_cream_night",
       title: "Крем ночной восстанавливающий",
       description: "Питательная формула с ниацинамидом и пептидами.",
       price: 1290,
@@ -466,12 +466,12 @@ function ensureDemoCatalog(db) {
       reviews_count: 63,
       popularity: 730,
       variants: [
-        { id: "v_wb_cream_night_50", size: "50 мл", color: "Без цвета", sku: "CREAM-NIGHT-50", stock: 19 },
-        { id: "v_wb_cream_night_100", size: "100 мл", color: "Без цвета", sku: "CREAM-NIGHT-100", stock: 6 },
+        { id: "v_var_cream_night_50", size: "50 мл", color: "Без цвета", sku: "CREAM-NIGHT-50", stock: 19 },
+        { id: "v_var_cream_night_100", size: "100 мл", color: "Без цвета", sku: "CREAM-NIGHT-100", stock: 6 },
       ],
     },
     {
-      id: "p_wb_headphones_pro",
+      id: "p_prod_headphones_pro",
       title: "Наушники TWS Pro Max",
       description: "Низкая задержка, прозрачный режим, сенсорное управление.",
       price: 4590,
@@ -485,12 +485,12 @@ function ensureDemoCatalog(db) {
       reviews_count: 304,
       popularity: 1880,
       variants: [
-        { id: "v_wb_headphones_pro_blk", size: "Стандарт", color: "Черный", sku: "TWS-PRO-BLK", stock: 24 },
-        { id: "v_wb_headphones_pro_white", size: "Стандарт", color: "Белый", sku: "TWS-PRO-WHT", stock: 11 },
+        { id: "v_var_headphones_pro_blk", size: "Стандарт", color: "Черный", sku: "TWS-PRO-BLK", stock: 24 },
+        { id: "v_var_headphones_pro_white", size: "Стандарт", color: "Белый", sku: "TWS-PRO-WHT", stock: 11 },
       ],
     },
     {
-      id: "p_wb_blanket_winter",
+      id: "p_prod_blanket_winter",
       title: "Плед Winter Touch",
       description: "Увеличенная плотность, мягкий ворс и аккуратная окантовка.",
       price: 2190,
@@ -504,12 +504,12 @@ function ensureDemoCatalog(db) {
       reviews_count: 112,
       popularity: 1140,
       variants: [
-        { id: "v_wb_blanket_winter_200", size: "200x220", color: "Лаванда", sku: "BLANKET-WTR-LAV", stock: 6 },
-        { id: "v_wb_blanket_winter_240", size: "220x240", color: "Серый", sku: "BLANKET-WTR-GRY", stock: 4 },
+        { id: "v_var_blanket_winter_200", size: "200x220", color: "Лаванда", sku: "BLANKET-WTR-LAV", stock: 6 },
+        { id: "v_var_blanket_winter_240", size: "220x240", color: "Серый", sku: "BLANKET-WTR-GRY", stock: 4 },
       ],
     },
     {
-      id: "p_wb_blanket_kids",
+      id: "p_prod_blanket_kids",
       title: "Плед Kids Soft",
       description: "Гипоаллергенный материал, подходит для детской комнаты.",
       price: 1290,
@@ -523,15 +523,15 @@ function ensureDemoCatalog(db) {
       reviews_count: 35,
       popularity: 490,
       variants: [
-        { id: "v_wb_blanket_kids_140", size: "110x140", color: "Розовый", sku: "BLANKET-KDS-PNK", stock: 15 },
+        { id: "v_var_blanket_kids_140", size: "110x140", color: "Розовый", sku: "BLANKET-KDS-PNK", stock: 15 },
       ],
     },
     {
-      id: "p_wb_hoodie_warm",
+      id: "p_prod_hoodie_warm",
       title: "Худи утепленное Arctic",
       description: "Плотный трикотаж с начёсом, высокий ворот и глубокий капюшон.",
       price: 4890,
-      brand: "WB Basics",
+      brand: "Basic Essentials",
       category_id: "clothes",
       image: "/img/products/clothes/hoodie_1.png",
       images: ["/img/products/clothes/hoodie_1.png", "/img/products/clothes/hoodie_2.png"],
@@ -541,12 +541,12 @@ function ensureDemoCatalog(db) {
       reviews_count: 87,
       popularity: 1360,
       variants: [
-        { id: "v_wb_hoodie_warm_m", size: "M", color: "Графит", sku: "WB-ARCTIC-M-GRF", stock: 5 },
-        { id: "v_wb_hoodie_warm_l", size: "L", color: "Графит", sku: "WB-ARCTIC-L-GRF", stock: 2 },
+        { id: "v_var_hoodie_warm_m", size: "M", color: "Графит", sku: "PROD-ARCTIC-M-GRF", stock: 5 },
+        { id: "v_var_hoodie_warm_l", size: "L", color: "Графит", sku: "PROD-ARCTIC-L-GRF", stock: 2 },
       ],
     },
     {
-      id: "p_wb_headphones_lite",
+      id: "p_prod_headphones_lite",
       title: "Наушники TWS Lite",
       description: "Компактный кейс, стабильный BT 5.3 и удобная посадка.",
       price: 2290,
@@ -560,7 +560,7 @@ function ensureDemoCatalog(db) {
       reviews_count: 198,
       popularity: 980,
       variants: [
-        { id: "v_wb_headphones_lite_black", size: "Стандарт", color: "Черный", sku: "TWS-LITE-BLK", stock: 27 },
+        { id: "v_var_headphones_lite_black", size: "Стандарт", color: "Черный", sku: "TWS-LITE-BLK", stock: 27 },
       ],
     },
   ];
