@@ -1,10 +1,10 @@
 export const openapiSpec = {
   openapi: "3.0.3",
   info: {
-    title: "WB demo — Simple Marketplace API",
+    title: "Simple Marketplace API",
     version: "2.0.0",
     description:
-      "Учебный маркетплейс (WB-like) для демонстрации REST API: категории, товары, фильтры/сорт, избранное, корзина, заказы."
+      "Учебный маркетплейс для демонстрации REST API: категории, товары, фильтры/сорт, избранное, корзина, заказы."
   },
   servers: [{ url: "http://localhost:3000" }],
   tags: [
